@@ -1,3 +1,6 @@
+import 'package:desafio_mobile/reset.dart';
+import 'package:desafio_mobile/services/authservice.dart';
+import 'package:desafio_mobile/signup.dart';
 import 'package:flutter/material.dart';
 class LoginPage extends StatefulWidget {
   
@@ -102,11 +105,11 @@ class _LoginPageState extends State<LoginPage> {
                 
                 )
             ),
-            onChanged: (value) {
-                  this.email = value;
-                },
-              validator: (value) => 
-                  value.isEmpty ? 'Email requerido':validateEmail(value)),
+             onChanged: (value) {
+                this.email = value;
+              },
+              validator: (value) =>
+                  value.isEmpty ? 'Email is required' : validateEmail(value)),
           TextFormField(
             decoration: InputDecoration(
               labelText: 'SENHA',
@@ -124,12 +127,13 @@ class _LoginPageState extends State<LoginPage> {
                   this.password = value;
                 },
               validator: (value) => 
-                  value.isEmpty ? 'Senha requerido':null,
+                  value.isEmpty ? 'Password is required' : null,
           ),
           SizedBox(height: 5.0),
           GestureDetector(
             onTap: () {
-
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ResetPassword()));
             },
             child: Container(
               alignment: Alignment(1.0, 0.0),
@@ -150,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 70.0),
           GestureDetector(
             onTap: () {
-
+               if(checkFields()) AuthService().singIn(email, password, context); 
             },
             child: Container(
               height: 50.0,
@@ -206,7 +210,8 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(width: 5.0),
             InkWell(
               onTap: () {
-
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SignupPage()));
               },
               child: Text('Registrar',
               style: TextStyle(
