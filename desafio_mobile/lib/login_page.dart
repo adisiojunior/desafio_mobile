@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Positioned(
                   top: 97.0,
-                  left: 175.0,
+                  left: 173.0,
                   child: Container(
                     height: 10.0,
                     width: 10.0,
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             )
           ),
-          SizedBox(height: 25.0),
+          SizedBox(height: 45.0),
           TextFormField(
             decoration: InputDecoration(
               labelText: 'EMAIL',
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                   value.isEmpty ? 'Email requerido':validateEmail(value)),
           TextFormField(
             decoration: InputDecoration(
-              labelText: 'PASSWORD',
+              labelText: 'SENHA',
               labelStyle: TextStyle(
                 fontFamily: 'Trueno',
                 fontSize:12.0,
@@ -125,7 +125,97 @@ class _LoginPageState extends State<LoginPage> {
                 },
               validator: (value) => 
                   value.isEmpty ? 'Senha requerido':null,
-          )    
+          ),
+          SizedBox(height: 5.0),
+          GestureDetector(
+            onTap: () {
+
+            },
+            child: Container(
+              alignment: Alignment(1.0, 0.0),
+              padding: EdgeInsets.only(top:15.0, left:20.0),
+              child: InkWell(
+                child: Text(
+                  'Esqueceu a Senha',
+                  style: TextStyle(
+                    color: greenColor,
+                    fontFamily: 'Trueno',
+                    fontSize: 12.0,
+                    decoration: TextDecoration.underline
+                  ),
+                )
+              )
+            ),
+          ),
+          SizedBox(height: 70.0),
+          GestureDetector(
+            onTap: () {
+
+            },
+            child: Container(
+              height: 50.0,
+              child: Material(
+                borderRadius: BorderRadius.circular(20.0),
+                shadowColor: Colors.greenAccent,
+                color: greenColor,
+                elevation: 7.0,
+                child: Center(
+                  child: Text('LOGIN',
+                  style: TextStyle(
+                    color: Colors.white, fontFamily: 'Trueno'
+                  ),
+                  )
+                )
+              ),
+            ),
+          ),
+          SizedBox(height: 20.0),
+          GestureDetector(
+            onTap: () {
+
+            },
+            child: Container(
+              height: 50.0,
+              color: Colors.transparent,
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black,
+                    style: BorderStyle.solid,
+                    width: 2.0),
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(25.0)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: ImageIcon(AssetImage('assets/facebook.png'),
+                        size: 15.0)),
+                      SizedBox(width: 10.0),
+                      Center(
+                        child: Text('Login com facebook',
+                        style: TextStyle(fontFamily: 'Trueno'))
+                      )  
+                  ],)  
+              ),
+            )
+          ),
+          SizedBox(height: 65.0),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text('Novo aqui ?'), 
+            SizedBox(width: 5.0),
+            InkWell(
+              onTap: () {
+
+              },
+              child: Text('Registrar',
+              style: TextStyle(
+                color: greenColor,
+                fontFamily: 'Trueno',
+                decoration: TextDecoration.underline
+              ))
+            )
+          ])
         ],
       )
       );
