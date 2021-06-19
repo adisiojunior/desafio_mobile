@@ -12,6 +12,27 @@ class _LoginPageState extends State<LoginPage> {
 
   Color greenColor = Color(0xFF00AF19);
 
+  // Para verificar o campos durante os envios
+  checkFields() {
+    final form = formKey.currentState;
+    if (form.validate()) {
+      form.save();
+      return true;
+    }
+    return false;
+  }
+
+  // trecho para validação de email
+  String validateEmail(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    if (!regex.hasMatch(value))
+      return 'Enter Valid Email';
+    else
+      return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Text('Tela de',
                 style: TextStyle(
-                  fontFamily: 'Truneo',
+                  fontFamily: 'Trueno',
                   fontSize: 60.0
                 )
                 ),
@@ -47,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'Login',
                     style: TextStyle(
-                      fontFamily: 'Truneo',
+                      fontFamily: 'Trueno',
                       fontSize: 60.0
                     )
                   )
@@ -66,7 +87,45 @@ class _LoginPageState extends State<LoginPage> {
                 )
               ],
             )
-          )
+          ),
+          SizedBox(height: 25.0),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'EMAIL',
+              labelStyle: TextStyle(
+                fontFamily: 'Trueno',
+                fontSize:12.0,
+                color: Colors.grey.withOpacity(0.5)
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: greenColor),
+                
+                )
+            ),
+            onChanged: (value) {
+                  this.email = value;
+                },
+              validator: (value) => 
+                  value.isEmpty ? 'Email requerido':validateEmail(value)),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'PASSWORD',
+              labelStyle: TextStyle(
+                fontFamily: 'Trueno',
+                fontSize:12.0,
+                color: Colors.grey.withOpacity(0.5)
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: greenColor),
+                
+                )),
+            obscureText: true,    
+            onChanged: (value) {
+                  this.password = value;
+                },
+              validator: (value) => 
+                  value.isEmpty ? 'Senha requerido':null,
+          )    
         ],
       )
       );
