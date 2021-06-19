@@ -176,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 20.0),
           GestureDetector(
             onTap: () {
-
+              AuthService().fbSignIn();
             },
             child: Container(
               height: 50.0,
