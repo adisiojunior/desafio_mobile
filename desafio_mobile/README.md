@@ -1,19 +1,19 @@
 # desafio_mobile
 
 ## Teslas
--Tela de Login
+# Tela de Login
 ![telaDeLogin](https://user-images.githubusercontent.com/20409822/122675164-8b820200-d1ae-11eb-938f-73a5bca7d204.png)
--Registrar
+# Registrar
 ![Registrar](https://user-images.githubusercontent.com/20409822/122674715-c71bcc80-d1ac-11eb-8212-25a57ec0ba45.png)
--Recuperar Senha
+# Recuperar Senha
 ![RecuperarSenha](https://user-images.githubusercontent.com/20409822/122674716-c7b46300-d1ac-11eb-9bf6-82c68d474bcd.png)
--Email Errado
+# Email Errado
 ![CasoEmailErrado](https://user-images.githubusercontent.com/20409822/122674719-c7b46300-d1ac-11eb-89a2-35bd406879e2.png)
-- Caso não digite nada nos campos
+# Caso não digite nada nos campos
 ![CasoNaoDigiteNada](https://user-images.githubusercontent.com/20409822/122674720-c84cf980-d1ac-11eb-80d9-60c707a92cb4.png)
-- Login com Facebook
+# Login com Facebook
 ![LoginComFacebook](https://user-images.githubusercontent.com/20409822/122674721-c84cf980-d1ac-11eb-9443-96f1428659e3.png)
-- Sua localização
+# Sua localização
 ![Screenshot_1624150085](https://user-images.githubusercontent.com/20409822/122675152-7dcc7c80-d1ae-11eb-827d-0b112d823233.png)
 
 
