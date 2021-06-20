@@ -5,8 +5,8 @@ import 'package:mockito/mockito.dart';
 import 'package:rxdart/rxdart.dart';
 
 class MockFirebaseAuth extends Mock implements FirebaseAuth{}
-class MockFirebaseUser extends Mock implements FirebaseUser{}
-class MockAuthResult extends Mock implements AuthResult {}
+class MockFirebaseUser extends Mock implements FirebaseAuth{}
+class MockAuthResult extends Mock implements FirebaseAuth{}
 
 void main() {
   MockFirebaseAuth _auth = MockFirebaseAuth();
@@ -14,6 +14,7 @@ void main() {
   when(_auth.onAuthStateChanged).thenAnswer((_){
     return _user;
   });
+  
   AuthService _repo = AuthService.instance(auth: _auth);
   group('user repository test', (){
     when(_auth.signInWithEmailAndPassword(email: "email",password: "password")).thenAnswer((_)async{

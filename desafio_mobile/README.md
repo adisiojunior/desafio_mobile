@@ -99,6 +99,16 @@
                 -AndroidManifest:
                 <uses-permission android:name="android.permission.ACSESS_FINE_LOCATION"/>
                 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+## Test 
+Testes (Unit Testing): 
+    adicionando dependencia
+    mockito: ^4.1.1
+    rxdart:
+
+Foi usando teste TDD:
+    - Test Driven Development (TDD) ou em português Desenvolvimento guiado por testes é uma técnica de desenvolvimento de software que se relaciona com o conceito de verificação e validação e se baseia em um ciclo curto de repetições: Primeiramente o desenvolvedor escreve um caso de teste automatizado que define uma melhoria desejada ou uma nova funcionalidade.
+Teste de unidade: 
+    -Teste de unidade é toda a aplicação de teste nas assinaturas de entrada e saída de um sistema. Consiste em validar dados válidos e inválidos via I/O (entrada/saída) sendo aplicado por desenvolvedores ou analistas de teste.
 ## Getting Started
 
 This project is a starting point for a Flutter application.

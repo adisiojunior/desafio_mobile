@@ -7,8 +7,12 @@ import '../home_page.dart';
 import '../login_page.dart';
 
 enum Status { Uninitialized, Authenticated, Authenticating, Unauthenticated  }
-class AuthService  {
+class AuthService  with ChangeNotifier {
+  
+  Status _status = Status.Uninitialized;
+  FirebaseAuth _user;
 
+  
  // lindado com autenticação e registro
  handleAuth() {
    return StreamBuilder(
@@ -22,9 +26,15 @@ class AuthService  {
      }
    );
  }
+
+ Status get status => _status;
+
  //Sair
- singOut() {
+ Future singOut() async {
    FirebaseAuth.instance.signOut();
+   _status = Status.Unauthenticated;
+   notifyListeners();
+   return Future.delayed(Duration.zero);
  }
 
  //Login
@@ -96,5 +106,16 @@ class AuthService  {
    //Reset Password
   resetPasswordLink(String email) {
     FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+  }
+
+  Future<void> onAuthStateChanged(FirebaseAuth firebaseUser) async {
+    if (firebaseUser == null) {
+      _status = Status.Unauthenticated;
+
+    } else {
+      _status = Status.Authenticated;
+    }
+
+    notifyListeners();
   }
 }
