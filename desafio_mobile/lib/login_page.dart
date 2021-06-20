@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                 this.email = value;
               },
               validator: (value) =>
-                  value.isEmpty ? 'Email is required' : validateEmail(value)),
+                  value.isEmpty ? 'Digite um Email' : validateEmail(value)),
           TextFormField(
             decoration: InputDecoration(
               labelText: 'SENHA',
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                   this.password = value;
                 },
               validator: (value) => 
-                  value.isEmpty ? 'Password is required' : null,
+                  value.isEmpty ? 'Digite uma senha' : null,
           ),
           SizedBox(height: 5.0),
           GestureDetector(
