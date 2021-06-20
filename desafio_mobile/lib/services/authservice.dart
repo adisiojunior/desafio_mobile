@@ -6,7 +6,8 @@ import '../error_handler.dart';
 import '../home_page.dart';
 import '../login_page.dart';
 
-class AuthService {
+enum Status { Uninitialized, Authenticated, Authenticating, Unauthenticated  }
+class AuthService  {
 
  // lindado com autenticação e registro
  handleAuth() {

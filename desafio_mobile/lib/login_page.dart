@@ -9,6 +9,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
   final formKey = new GlobalKey<FormState>();
 
   String email, password;
@@ -24,6 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     }
     return false;
   }
+
 
   // trecho para validação de email
   String validateEmail(String value) {
