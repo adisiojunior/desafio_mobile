@@ -54,7 +54,9 @@ class _SignupPageState extends State<SignupPage> {
               child: Stack(
                 children: [
                   Text('Signup',
-                      style: TextStyle(fontFamily: 'Trueno', fontSize: 60.0)),
+                      style: TextStyle(
+                        fontFamily: 'Trueno', 
+                        fontSize: 60.0)),
                   //Dot placement
                   Positioned(
                       top: 62.0,
@@ -63,9 +65,11 @@ class _SignupPageState extends State<SignupPage> {
                           height: 10.0,
                           width: 10.0,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: greenColor)))
+                              shape: BoxShape.circle, 
+                              color: greenColor)))
                 ],
               )),
+              
           SizedBox(height: 25.0),
           TextFormField(
               decoration: InputDecoration(

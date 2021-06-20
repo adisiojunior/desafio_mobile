@@ -81,9 +81,9 @@ class _HomePageState extends State<HomePage> {
                       fontFamily: 'Trueno',
                       color: Colors.white
                     ),),
-                    )
+                  )
                 ],
-                ),
+            ),
           ],
         ),
 

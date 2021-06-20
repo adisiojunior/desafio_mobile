@@ -55,7 +55,9 @@ class _ResetPasswordState extends State<ResetPassword> {
               child: Stack(
                 children: [
                   Text('reset',
-                      style: TextStyle(fontFamily: 'Trueno', fontSize: 60.0)),
+                      style: TextStyle(
+                        fontFamily: 'Trueno',
+                        fontSize: 60.0)),
                   //Dot placement
                   Positioned(
                       top: 47.0,
@@ -64,11 +66,13 @@ class _ResetPasswordState extends State<ResetPassword> {
                           height: 10.0,
                           width: 10.0,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: greenColor)))
+                              shape: BoxShape.circle, 
+                              color: greenColor)))
                 ],
               )),
+
           SizedBox(height: 25.0),
-          TextFormField(
+            TextFormField(
               decoration: InputDecoration(
                   labelText: 'EMAIL',
                   labelStyle: TextStyle(
@@ -82,7 +86,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                 this.email = value;
               },
               validator: (value) =>
-                  value.isEmpty ? 'Email is required' : validateEmail(value)),
+                  value.isEmpty ? 'Email is required' : validateEmail(value)
+          ),
+          
           SizedBox(height: 50.0),
           GestureDetector(
             onTap: () {
@@ -99,8 +105,10 @@ class _ResetPasswordState extends State<ResetPassword> {
                     child: Center(
                         child: Text('RECUPERAR SENHA',
                             style: TextStyle(
-                                color: Colors.white, fontFamily: 'Trueno'))))),
+                                color: Colors.white, 
+                                fontFamily: 'Trueno'))))),
           ),
+          
           SizedBox(height: 20.0),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             InkWell(

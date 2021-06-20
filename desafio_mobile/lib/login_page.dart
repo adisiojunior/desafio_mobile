@@ -91,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             )
           ),
+
           SizedBox(height: 45.0),
           TextFormField(
             decoration: InputDecoration(
@@ -129,6 +130,7 @@ class _LoginPageState extends State<LoginPage> {
               validator: (value) => 
                   value.isEmpty ? 'Digite uma senha' : null,
           ),
+
           SizedBox(height: 5.0),
           GestureDetector(
             onTap: () {
@@ -151,6 +153,7 @@ class _LoginPageState extends State<LoginPage> {
               )
             ),
           ),
+
           SizedBox(height: 70.0),
           GestureDetector(
             onTap: () {
@@ -173,6 +176,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
+
           SizedBox(height: 20.0),
           GestureDetector(
             onTap: () {
@@ -204,6 +208,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             )
           ),
+
           SizedBox(height: 65.0),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text('Novo aqui ?'), 
@@ -223,6 +228,6 @@ class _LoginPageState extends State<LoginPage> {
           ])
         ],
       )
-      );
+    );
   }
 }

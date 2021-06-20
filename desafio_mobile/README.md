@@ -1,7 +1,87 @@
 # desafio_mobile
 
-A new Flutter project.
+## Teslas
 
+## Participants
+
+[<img src="https://avatars.githubusercontent.com/u/20409822?v=4" width="75px;"/>](https://github.com/adisiojunior)
+
+[Adísio Fialho Jr](https://github.com/adisiojunior)
+
+## Feito 
+- [x] Tela de login
+- [x] Tela de Singup
+- [x] Tela de esqueceu a senha
+- [x] Tela de Home (Localizaçaõ em tempo real)
+
+## Techs
+
+- [x] Flutter e Dart
+- [x] Editor Vscode
+- [x] Firebase
+- [x] Facevebook for development
+
+## Bibliotecas
+    Para criação do project
+    Criando o projeto em Flutter:
+    -Foi utilizado o vscode;
+    -Foi utilizado AndroidStudio, apenas o seu simulador
+    - Comando para criação do projeto em flutter:
+        - crtl+shift+p
+        -Flutter: New Aplication Projecg
+        -Abrindando o simulador pelo terminal:
+            -  flutter emulators --launch "nomeDoEmulador"
+            - Dentro do vscode, dar o comando Ctrl+shift+D
+    
+    Vamos instalar duas dependencias:
+    -firebase_core:
+    plug-in é responsável por conectar seu aplicativo Flutter ao projeto Firebase.
+     O plugin deve ser instalado e inicializado antes do uso de qualquer outro plugin 
+     FlutterFire. Ele fornece funcionalidades básicas, como:
+        - Inicializando o FlutterFire .
+        - Criação de instâncias secundárias do aplicativo Firebase .
+    -firebase_auth:
+    Firebase Authentication é facilitar o desenvolvimento de um sistema de autenticação seguro,
+    além de melhorar a experiência de login e integração para os usuários finais.
+
+    Criado o projeto no site firebase, vamos realizar as configurações
+        Entrando em AndroidManifest.xml, podemos encontrar o package que vamos usar
+        package="com.example.desafio_mobile"
+    Depois de colocar o pacote devemos gerar o SHA-1
+        -abrir o terminar e gerar o código:
+        keytool -list -v -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+        Com isso vai aparecer a SHA-1
+    Agora Precisa colocar o arquivo google-service dentro do projeto
+    Agora entrar no build.gradle
+        colocar: minSdkVersion 21
+        multiDexEnabled true e
+        apply plugin: 'com.google.gms.google-services'
+        dependencias:
+            implementation 'androidx.multidex:multidex:2.0.1'
+        No outro build.gradle, certificar de quê está forcendo ao google
+            colocando a dependencias:
+                classpath 'com.google.gms:google-services:4.3.3'
+
+    Criando o pacote services, e o arquivo authservices, para conter a lógica de autenticação
+    Criando um arquivo, para tratamento de erros
+
+    Colocando a dependencia: flutter_login_facebook, para poder realizar login com facebook
+        - abrinando o site do facebook para desenvolvedor
+        - criando o app
+        - depois adicionar o aplicativo no Firebase
+    Comando para encontrar hashes chaves:
+        cd para entrar na pasta da JDK
+        comando para o window: 
+        keytool -exportcert -alias androiddebugkey -keystore "C:debug.keystore" | "C:\OpenSSl\bin\openssl" sha1 -binary | "C:\OpenSSL\bin\openssl" base64
+
+    Intalação das dependencia de localização
+        -geolocator:
+            Um plug-in de geolocalização do Flutter que fornece acesso fácil a serviços de localização específicos da plataforma 
+            ( FusedLocationProviderClient ou, se não estiver disponível, o LocationManager no Android e CLLocationManager no iOS).  
+                Configurações: 
+                -AndroidManifest:
+                <uses-permission android:name="android.permission.ACSESS_FINE_LOCATION"/>
+                <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
